@@ -1,34 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [debug, setDebug] = useState<string | null>('пока что ничего нет')
-
-  useEffect(() => {
-    const tg = window.Telegram?.WebApp
-    if (!tg) setDebug('TG не найден')
-
-    tg?.ready()
-
-    const user = tg?.initDataUnsafe?.user
-
-    setDebug(
-      JSON.stringify(
-        {
-          initDataUnsafe: tg?.initDataUnsafe,
-          user,
-        },
-        null,
-        2
-      )
-    )
-  }, [])
+  const params = useMemo(() => new URLSearchParams(window.location.search), [])
 
   const tg = window.Telegram?.WebApp
 
-  const username = tg?.initDataUnsafe?.user?.username
+  const username = params.get('username')
+  const id = params.get('tg_id')
+
   return (
     <>
       <div>
@@ -40,8 +22,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <h2>Привет, {username}</h2>
-      <h2>{debug || 'Ждем данных от телеграмм'}</h2>
+      <h2>
+        Привет, {username} {id}
+      </h2>
       <h2>{JSON.stringify(tg)}</h2>
     </>
   )
