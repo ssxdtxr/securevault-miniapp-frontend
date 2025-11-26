@@ -1,12 +1,23 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-// const tg = window.Telegram?.WebApp
-
 function App() {
+  const tg = window.Telegram?.WebApp
   const params = useMemo(() => new URLSearchParams(window.location.search), [])
+
+  useEffect(() => {
+    if (!tg) return
+
+    tg.ready()
+
+    try {
+      tg.expand()
+    } catch (error) {
+      console.log(error)
+    }
+  }, [tg])
 
   const username = params.get('username')
   const id = params.get('tg_id')
