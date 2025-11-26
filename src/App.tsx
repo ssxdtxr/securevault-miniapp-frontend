@@ -9,8 +9,8 @@ function App() {
 
   useEffect(() => {
     if (tg) {
-      tg.expand()
       tg.ready()
+      tg.expand()
     }
   }, [tg])
 
