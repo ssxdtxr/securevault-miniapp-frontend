@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     if (tg) {
       tg.ready()
-      tg.expand()
+      tg.requestFullscreen()
     }
   }, [tg])
 

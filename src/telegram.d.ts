@@ -2,20 +2,21 @@ declare global {
   interface Window {
     Telegram?: {
       WebApp?: {
-        ready(): void;
-        expand(): void;
-        close(): void;
+        ready(): void
+        expand(): void
+        close(): void
+        requestFullscreen(): void
         initDataUnsafe?: {
           user?: {
-            id: number;
-            first_name: string;
-            last_name?: string;
-            username?: string;
-            language_code?: string;
-          };
-        };
-      };
-    };
+            id: number
+            first_name: string
+            last_name?: string
+            username?: string
+            language_code?: string
+          }
+        }
+      }
+    }
   }
 }
 
