@@ -3,10 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// const tg = window.Telegram?.WebApp
+
 function App() {
   const params = useMemo(() => new URLSearchParams(window.location.search), [])
-
-  const tg = window.Telegram?.WebApp
 
   const username = params.get('username')
   const id = params.get('tg_id')
@@ -25,7 +25,6 @@ function App() {
       <h2>
         Привет, {username} {id}
       </h2>
-      <h2>{JSON.stringify(tg)}</h2>
     </>
   )
 }
