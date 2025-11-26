@@ -8,14 +8,9 @@ function App() {
   const params = useMemo(() => new URLSearchParams(window.location.search), [])
 
   useEffect(() => {
-    if (!tg) return
-
-    tg.ready()
-
-    try {
+    if (tg) {
       tg.expand()
-    } catch (error) {
-      console.log(error)
+      tg.ready()
     }
   }, [tg])
 
