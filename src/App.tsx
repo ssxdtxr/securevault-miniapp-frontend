@@ -30,7 +30,7 @@ function App() {
   const parseInitData = (initData: any) => {
     const params = new URLSearchParams(initData)
     return {
-      user: JSON.parse(params?.get('user')),
+      user: JSON.parse(params?.get('user') ?? ''),
       hash: params.get('hash'),
       auth_date: params.get('auth_date'),
       start_param: params.get('start_param'),
