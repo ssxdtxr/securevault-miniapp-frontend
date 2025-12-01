@@ -7,9 +7,10 @@ import './App.css'
 //   name?: string | null
 // }
 
-const tg = window.Telegram?.WebApp
 
 function App() {
+  const tg = window.Telegram?.WebApp
+
   // const [userData, setUserData] = useState<any>(null)
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
     <div>
       <h1>My Telegram Mini App</h1>
       <button onClick={onClose}>close</button>
+      <span>{tg?.initDataUnsafe?.user?.username}</span>
     </div>
   )
 }
