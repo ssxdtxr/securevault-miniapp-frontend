@@ -15,6 +15,7 @@ declare global {
             language_code?: string
           }
         }
+        initData?: Record<string, unknown>
       }
     }
   }
