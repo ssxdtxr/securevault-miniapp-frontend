@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     tg?.ready()
+    tg?.requestFullscreen()
 
     // Автоматический вход при загрузке приложения
     const initData = tg?.initData
