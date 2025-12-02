@@ -3,13 +3,8 @@ import axios from 'axios'
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
 export interface AuthResponse {
-  tokens: {
-    access: string
-    refresh: string
-  }
-  user: {
-    tg_id: number
-  }
+  access: string
+  refresh: string
 }
 
 export interface RefreshResponse {
@@ -35,7 +30,8 @@ class AuthService {
   }
 
   // Сохранение токенов в localStorage или другом хранилище
-  saveTokens(tokens: AuthResponse['tokens']) {
+  saveTokens(tokens: AuthResponse) {
+    console.log(tokens)
     localStorage.setItem('access_token', tokens.access)
     localStorage.setItem('refresh_token', tokens.refresh)
   }

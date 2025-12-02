@@ -9,11 +9,10 @@ export function useSignIn() {
     mutationFn: (initData: string) => authService.signIn(initData),
     onSuccess: data => {
       // Сохраняем токены
-      authService.saveTokens(data.tokens)
+      authService.saveTokens(data)
 
       // Обновляем кеш пользователя
-      queryClient.setQueryData(['user'], data.user)
-      queryClient.setQueryData(['tokens'], data.tokens)
+      queryClient.setQueryData(['tokens'], data.access)
 
       // Делаем запросы валидными
       queryClient.invalidateQueries({ queryKey: ['user'] })
