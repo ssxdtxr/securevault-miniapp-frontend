@@ -5,7 +5,7 @@ import { Input } from './shared/ui/Input'
 import Logo from './shared/assets/logo.svg?react'
 
 function App() {
-  const { mutateSignIn } = useAuth()
+  // const { mutateSignIn } = useAuth()
 
   return (
     <main className="w-screen h-screen overflow-hidden p-4 flex items-center justify-center">
