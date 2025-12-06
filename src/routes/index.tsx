@@ -1,6 +1,6 @@
 import { createFileRoute, redirect } from '@tanstack/react-router'
 
-const isWelcomeNeeded = false
+// const isWelcomeNeeded = false
 
 export const Route = createFileRoute('/')({
   beforeLoad: async () => {
