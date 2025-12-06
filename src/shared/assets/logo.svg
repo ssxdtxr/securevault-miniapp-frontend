@@ -17,7 +17,7 @@
         attributeType="XML"
         type="translate"
         additive="sum"
-        dur="3s"
+        dur="2s"
         repeatCount="indefinite"
         keyTimes="0;0.5;1"
         values="0 0; 0 -6; 0 0" />
@@ -28,10 +28,10 @@
         attributeType="XML"
         type="rotate"
         additive="sum"
-        dur="4s"
+        dur="3s"
         repeatCount="indefinite"
         keyTimes="0;0.33;0.66;1"
-        values="0 100 100; 1.5 100 100; -1.5 100 100; 0 100 100" />
+        values="0 100 100; 1.5 700 100; -1.5 100 100; 0 100 100" />
 
       <!-- 3) Пульс по прозрачности -->
       <animate
